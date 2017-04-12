@@ -9,18 +9,18 @@
     } else {
         this[name] = definition();
     }
-})('pwAnimate', function() {
-    var pwa = {};
-    pwa.pwAnimateCache = function() {
-        for (allBoxes = window.document.documentElement.querySelectorAll(".animate"), i = 0; i < allBoxes.length; i++) allBoxes[i].attributes["style"] ? allBoxes[i].setAttribute("animate-style-cache", allBoxes[i].attributes["style"].value) : allBoxes[i].setAttribute("animate-style-cache", " "), allBoxes[i].style.visibility = "hidden"
+})('Pwa', function() {
+    var Pwa = {};
+    Pwa.pwAnimateCache = function() {
+        for (allBoxes = window.document.documentElement.querySelectorAll(".animate"), i = 0; i < allBoxes.length; i++) allBoxes[i].attributes["style"] ? allBoxes[i].setAttribute("data-style-cache", allBoxes[i].attributes["style"].value) : allBoxes[i].setAttribute("data-style-cache", " "), allBoxes[i].style.visibility = "hidden"
     };
-    pwa.pwAnimate = function(a) {
-        pwa.clearPwAnimate();
+    Pwa.pwAnimate = function(a) {
+        Pwa.clearPwAnimate();
         var b = a.pages[a.current].querySelectorAll(".animate");
-        for (i = 0; i < b.length; i++) b[i].style.visibility = "visible", effect = b[i].attributes["animate-effect"] ? b[i].attributes["animate-effect"].value : "", b[i].className = b[i].className + "  " + effect + " " + "animated", style = b[i].attributes["style"].value, duration = b[i].attributes["animate-time"] ? b[i].attributes["animate-time"].value : "", duration && (style = style + "animatemation-duration:" + duration + ";-webkit-animatemation-duration:" + duration + ";"), delay = b[i].attributes["animate-delay"] ? b[i].attributes["animate-delay"].value : "", delay && (style = style + "animatemation-delay:" + delay + ";-webkit-animatemation-delay:" + delay + ";"), b[i].setAttribute("style", style)
+        for (i = 0; i < b.length; i++) b[i].style.visibility = "visible", effect = b[i].attributes["data-effect"] ? b[i].attributes["data-effect"].value : "", b[i].className = b[i].className + "  " + effect + " " + "animated", style = b[i].attributes["style"].value, duration = b[i].attributes["data-time"] ? b[i].attributes["data-time"].value : "", duration && (style = style + "-webkit-animation-duration:" + duration + ";animation-duration:" + duration + ";"), delay = b[i].attributes["data-delay"] ? b[i].attributes["data-delay"].value : "", delay && (style = style + "-webkit-animation-delay:" + delay + ";animation-delay:" + delay + ";"), b[i].setAttribute("style", style)
     };
-    pwa.clearPwAnimate = function() {
-        for (allBoxes = window.document.documentElement.querySelectorAll(".animate"), i = 0; i < allBoxes.length; i++) allBoxes[i].attributes["animate-style-cache"] && allBoxes[i].setAttribute("style", allBoxes[i].attributes["animate-style-cache"].value), allBoxes[i].style.visibility = "hidden", allBoxes[i].className = allBoxes[i].className.replace("animated", " "), allBoxes[i].attributes["animate-effect"] && (effect = allBoxes[i].attributes["animate-effect"].value, allBoxes[i].className = allBoxes[i].className.replace(effect, " "))
+    Pwa.clearPwAnimate = function() {
+        for (allBoxes = window.document.documentElement.querySelectorAll(".animate"), i = 0; i < allBoxes.length; i++) allBoxes[i].attributes["data-style-cache"] && allBoxes[i].setAttribute("style", allBoxes[i].attributes["data-style-cache"].value), allBoxes[i].style.visibility = "hidden", allBoxes[i].className = allBoxes[i].className.replace("animated", " "), allBoxes[i].attributes["data-effect"] && (effect = allBoxes[i].attributes["data-effect"].value, allBoxes[i].className = allBoxes[i].className.replace(effect, " "))
     };
-    return pwa;
+    return Pwa;
 });

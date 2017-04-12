@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "pageswitch" : "2.3.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/sternelee/pageswitch-animate.git"
