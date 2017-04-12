@@ -12,7 +12,7 @@
 ```
 import Pw from 'pageswitch';
 import Pwa from 'pageswitch-animate';
-import 'pageswitch-animate/css/animation.css';
+import 'pageswitch-animate/css/animate.css';
 
 ...
 // 使用 id 为 pw
